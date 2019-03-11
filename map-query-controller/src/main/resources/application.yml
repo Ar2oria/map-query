@@ -1,0 +1,4 @@
+server:
+  servlet:
+    application-display-name: map-query
+  port: 8081
