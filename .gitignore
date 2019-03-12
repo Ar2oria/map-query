@@ -5,3 +5,7 @@
 # IntelliJ project files
 /map-query.iml
 /.idea/
+/map-query-service/map-query-service.iml
+/map-query-model/map-query-model.iml
+/map-query-controller/map-query-controller.iml
+map-query-common/map-query-common.iml
