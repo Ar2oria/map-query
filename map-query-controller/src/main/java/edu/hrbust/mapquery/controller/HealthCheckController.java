@@ -1,5 +1,7 @@
 package edu.hrbust.mapquery.controller;
 
+import edu.hrbust.mapquery.service.HealthCheckService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,9 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @author: ar2oria
  */
 @RestController
-public class HealthCheck {
+public class HealthCheckController {
+    @Autowired
+    private HealthCheckService healthCheckService;
+
     @RequestMapping("/healthCheck")
     public String healthCheck() {
-        return "ok";
+        return healthCheckService.CheckHealth();
     }
 }

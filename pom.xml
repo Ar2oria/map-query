@@ -39,6 +39,27 @@
 				<version>${junit.version}</version>
 				<scope>test</scope>
 			</dependency>
+			<!--models-->
+			<dependency>
+				<groupId>edu.hrbust</groupId>
+				<artifactId>map-query-common</artifactId>
+				<version>${version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.hrbust</groupId>
+				<artifactId>map-query-controller</artifactId>
+				<version>${version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.hrbust</groupId>
+				<artifactId>map-query-model</artifactId>
+				<version>${version}</version>
+			</dependency>
+			<dependency>
+				<groupId>edu.hrbust</groupId>
+				<artifactId>map-query-service</artifactId>
+				<version>${version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

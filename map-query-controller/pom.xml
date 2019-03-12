@@ -22,23 +22,10 @@
 	</properties>
 
 	<dependencies>
-		<!--starter-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-			<exclusions>
-				<!-- 想要配置log4j2，就要先去除logging包 -->
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-logging</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<!--starter-web-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>edu.hrbust</groupId>
+            <artifactId>map-query-service</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>
