@@ -1,12 +1,11 @@
 package edu.hrbust.mapquery.proxy;
 
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import edu.hrbust.AppRun;
-import edu.hrbust.common.dto.response.BaseResponseDTO;
 import edu.hrbust.mapquery.common.utils.PropertyUtils;
 import edu.hrbust.mapquery.proxy.baidu.dto.PlaceSearchRequestDTO;
 import edu.hrbust.mapquery.proxy.baidu.dto.PlaceSearchResponseDTO;
-import edu.hrbust.mapquery.proxy.baidu.dto.SharpPSResponseDTO;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -34,7 +33,8 @@ public class BaseProxyTest {
         placeSearchRequestDTO.setQuery("atm机");
         placeSearchRequestDTO.setRegion("北京");
         placeSearchRequestDTO.setOutput("json");
-        List<PlaceSearchResponseDTO> baiduMapPlaceSearch = BaseProxy.doGetWithAutoDeserilize(PropertyUtils.getMap().get("baiduMapPlaceSearch"), placeSearchRequestDTO);
+        List<PlaceSearchResponseDTO> baiduMapPlaceSearch = BaseProxy.doGetWithAutoDeserilize(PropertyUtils.getMap().get("baiduMapPlaceSearch"), placeSearchRequestDTO, new TypeReference<List<PlaceSearchResponseDTO>>() {
+        });
         System.out.println(baiduMapPlaceSearch);
     }
 }

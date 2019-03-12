@@ -2,10 +2,8 @@ package edu.hrbust.common.enums;
 
 
 import com.google.common.collect.Maps;
-import com.sun.org.glassfish.gmbal.Description;
 import lombok.AllArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
-
 
 import java.util.Arrays;
 import java.util.Map;
@@ -17,7 +15,6 @@ import java.util.Map;
  * @since 2018/12/17
  */
 
-@Description("Api返回状态码信息和相关描述，前端可根据状态码定位问题")
 @lombok.Getter
 @AllArgsConstructor
 public enum ResultStatusEnum implements EnumTrait {
