@@ -4,6 +4,7 @@ package edu.hrbust.mapquery.proxy;
 import com.fasterxml.jackson.core.type.TypeReference;
 import edu.hrbust.AppRun;
 import edu.hrbust.mapquery.common.utils.PropertyUtils;
+import edu.hrbust.mapquery.proxy.baidu.dto.GeoConvertRequestDTO;
 import edu.hrbust.mapquery.proxy.baidu.dto.PlaceSearchRequestDTO;
 import edu.hrbust.mapquery.proxy.baidu.dto.PlaceSearchResponseDTO;
 import org.junit.Test;
@@ -36,5 +37,16 @@ public class BaseProxyTest {
         List<PlaceSearchResponseDTO> baiduMapPlaceSearch = BaseProxy.doGetWithAutoDeserilize(PropertyUtils.getMap().get("baiduMapPlaceSearch"), placeSearchRequestDTO, new TypeReference<List<PlaceSearchResponseDTO>>() {
         });
         System.out.println(baiduMapPlaceSearch);
+    }
+
+    @Test
+    public void doGet2() throws UnsupportedEncodingException {
+        GeoConvertRequestDTO geoConvertRequestDTO = new GeoConvertRequestDTO();
+        geoConvertRequestDTO.setOutput("json");
+        geoConvertRequestDTO.setCoords("126.626564,45.721832");
+        geoConvertRequestDTO.setFrom(5);
+        geoConvertRequestDTO.setTo(3);
+        String baiduMapGeoConvert = BaseProxy.doGet(PropertyUtils.getMap().get("baiduMapGeoConvert"), geoConvertRequestDTO);
+        System.out.println(baiduMapGeoConvert);
     }
 }

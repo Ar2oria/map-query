@@ -7,24 +7,34 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PlaceSearchRequestDTO extends BaseRequestDTO {
-    //检索关键字。行政区划区域检索不支持多关键字检索。
-    //如果需要按POI分类进行检索，请将分类通过query参数进行设置，如query=美食
+    /**
+     *     检索关键字。行政区划区域检索不支持多关键字检索。
+     *     如果需要按POI分类进行检索，请将分类通过query参数进行设置，如query=美食
+     */
     private String query;
-
-    //检索分类偏好，与q组合进行检索，多个分类以","分隔
-    //（POI分类），如果需要严格按分类检索，请通过query参数设置
+    /**
+     *     检索分类偏好，与q组合进行检索，多个分类以","分隔
+     *     （POI分类），如果需要严格按分类检索，请通过query参数设置
+     */
     private String tag;
-
-    //检索行政区划区域（增加区域内数据召回权重，如需严格限制召回数据在区域内，请搭配使用city_limit参数），可输入行政区划名或对应cityCode
+    /**
+     *     检索行政区划区域（增加区域内数据召回权重，如需严格限制召回数据在区域内，请搭配使用city_limit参数），可输入行政区划名或对应cityCode
+     */
     private String region;
 
-    //区域数据召回限制，为true时，仅召回region对应区域内数据。
+    /**
+     * 区域数据召回限制，为true时，仅召回region对应区域内数据。
+     */
     private Boolean city_limit;
 
-    //输出格式为json或者xml
+    /**
+     *     输出格式为json或者xml
+     */
     private String output;
 
-    //检索结果详细程度。取值为1 或空，则返回基本信息；取值为2，返回检索POI详细信息
+    /**
+     *     检索结果详细程度。取值为1 或空，则返回基本信息；取值为2，返回检索POI详细信息
+     */
     private String scope;
 
     /**
@@ -75,7 +85,9 @@ public class PlaceSearchRequestDTO extends BaseRequestDTO {
      */
     private Integer coord_type;
 
-    //可选参数，添加后POI返回国测局经纬度坐标
+    /**
+     *     可选参数，添加后POI返回国测局经纬度坐标
+     */
     private String ret_coordtype;
 
     /**
@@ -105,7 +117,7 @@ public class PlaceSearchRequestDTO extends BaseRequestDTO {
     /**
      * 单次召回POI数量，默认为10条记录，最大返回20条。多关键字检索时，返回的记录数为关键字个数*page_size。
      */
-    private Integer page_size = 10;
+    private Integer page_size;
 
     /**
      * 分页页码，默认为0,0代表第一页，1代表第二页，以此类推。
@@ -113,22 +125,12 @@ public class PlaceSearchRequestDTO extends BaseRequestDTO {
      */
     private Integer page_num;
 
-
-    public PlaceSearchRequestDTO() {
-        coord_type = 1;
-    }
-
-
     @Override
     public  String toString() {
 
         if (output == null) {
             throw new IllegalArgumentException("参数错误，请指定一种输出类型");
         }
-        if (query == null) {
-            throw new IllegalArgumentException("参数错误，query参数为空！");
-        }
-
         int paramCount = 0;
         if (region == null) {
             paramCount++;

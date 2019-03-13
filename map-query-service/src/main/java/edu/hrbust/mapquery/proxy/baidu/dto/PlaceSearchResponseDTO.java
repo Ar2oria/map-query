@@ -6,7 +6,6 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class PlaceSearchResponseDTO {
-
     private String name;
     private Location location;
     private String address;

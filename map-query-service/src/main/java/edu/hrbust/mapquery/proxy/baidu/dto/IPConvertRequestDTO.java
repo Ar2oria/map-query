@@ -9,5 +9,12 @@ import lombok.Data;
 public class IPConvertRequestDTO extends BaseRequestDTO {
     private String ip;
     private String coor;
+
+    @Override
+    public String toString(){
+        return super.toString();
+    }
+
+
 }
 

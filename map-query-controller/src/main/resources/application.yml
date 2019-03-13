@@ -10,5 +10,6 @@ request:
       baiduMapGeocoder: /geocoder/v2/
       baiduMapIPConvert: /location/ip
       baiduMapPlaceSearch: /place/v2/search
+      baiduMapGeoConvert: /geoconv/v1/
     ak: Y1XohU4UQoppPo2eRjmdm9ed72qPwKp9
     sk: bsCILEjczffn6Fjfq9SXeyVjh5fGHljh
