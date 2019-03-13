@@ -3,6 +3,7 @@ package edu.hrbust.mapquery.proxy;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import edu.hrbust.AppRun;
+import edu.hrbust.common.dto.response.BaseResponseDTO;
 import edu.hrbust.mapquery.common.utils.PropertyUtils;
 import edu.hrbust.mapquery.proxy.baidu.dto.GeoConvertRequestDTO;
 import edu.hrbust.mapquery.proxy.baidu.dto.PlaceSearchRequestDTO;
@@ -34,7 +35,7 @@ public class BaseProxyTest {
         placeSearchRequestDTO.setQuery("atm机");
         placeSearchRequestDTO.setRegion("北京");
         placeSearchRequestDTO.setOutput("json");
-        List<PlaceSearchResponseDTO> baiduMapPlaceSearch = BaseProxy.doGetWithAutoDeserilize(PropertyUtils.getMap().get("baiduMapPlaceSearch"), placeSearchRequestDTO, new TypeReference<List<PlaceSearchResponseDTO>>() {
+        List<PlaceSearchResponseDTO> baiduMapPlaceSearch = BaseProxy.doGetWithAutoDeserilize(PropertyUtils.getMap().get("baiduMapPlaceSearch"), placeSearchRequestDTO, new TypeReference<BaseResponseDTO<List<PlaceSearchResponseDTO>>>() {
         });
         System.out.println(baiduMapPlaceSearch);
     }
