@@ -20,4 +20,9 @@ public class HealthCheckController {
     public String healthCheck() {
         return healthCheckService.CheckHealth();
     }
+
+    @RequestMapping("/pid")
+    public Long getPid(){
+        return healthCheckService.getCurrentPid();
+    }
 }
